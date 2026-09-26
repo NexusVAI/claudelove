@@ -1,0 +1,16 @@
+{
+  "brand": "NexusVAI",
+  "tagline": "Where intelligence connects.",
+  "hud": {
+    "title": ["NexusVAI", "Identity System — Type"],
+    "credit": ["Set in Geist SemiBold", "UPM 1000 · SIL OFL 1.1"]
+  },
+  "sections": ["01  Grid", "02  Outline", "03  Mass", "04  Space", "05  Voice"],
+  "outro": "© 2026 NexusVAI",
+  "tracking": -26,
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "duration": 10.4,
+  "palette": { "bg": "#C1C1BF", "ink": "#0B0B0C" }
+}

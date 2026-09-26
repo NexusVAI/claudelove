@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Type Construction Promo</title>
+<style>
+  :root { --bg: #1a1a1a; --fg: #e8e8e6; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 13px/1.4 system-ui, sans-serif; }
+  body.render { background: #000; }
+  #stage { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100%; gap: 12px; padding: 16px; box-sizing: border-box; }
+  canvas { width: min(100%, calc((100vh - 90px) * 16 / 9)); aspect-ratio: 16 / 9; display: block; cursor: pointer; }
+  body.render #stage { padding: 0; gap: 0; }
+  body.render canvas { width: 1920px; height: 1080px; }
+  #controls { display: flex; gap: 10px; align-items: center; width: min(100%, calc((100vh - 90px) * 16 / 9)); }
+  #controls input { flex: 1; }
+  button { background: #333; color: var(--fg); border: 0; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+  body.render #controls { display: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c"></canvas>
+  <div id="controls">
+    <button id="play">▶ / ❚❚</button>
+    <input id="bar" type="range" min="0" max="1" step="0.0001" value="0">
+    <span id="time">0.00s</span>
+  </div>
+</div>
+<audio id="a" src="out/audio.wav" preload="auto"></audio>
+<script>
+  if (new URLSearchParams(location.search).get('mode') === 'render') document.body.classList.add('render');
+</script>
+<script src="src/vendor/opentype.min.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
